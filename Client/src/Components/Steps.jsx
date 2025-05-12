@@ -15,7 +15,7 @@ function Steps() {
         {" "}
         How It Works{" "}
       </h1>
-      <p className="text-lg text-gray-600 mb-8">
+      <p className="text-lg text-black dark:text-white mb-8">
         {" "}
         Transform words into Stunning image
       </p>
@@ -23,13 +23,13 @@ function Steps() {
         {StepData.map((item, index) => (
           <div
             key={index}
-            className="flex items-center gap-4 p-5 px-8 bg-white/20
+            className="flex items-center gap-4 p-5 px-8 text-black dark:text-white
           shadow-md border cursor-pointer hover:scale-[1.02] transition-all duration-300 rounded-lg"
           >
             <img src={item.icon} alt="" className="w-10 " />
             <div>
               <h2 className="text-xl font-medium">{item.title}</h2>
-              <p className="text-gray-500">{item.description}</p>
+              <p className="text-black dark:text-white">{item.description}</p>
             </div>
           </div>
         ))}

@@ -23,7 +23,7 @@ const GenrateButton = () => {
       viewport={{ once: true }}
       className="pb-16 text-center"
     >
-      <h1 className="text-2xl md:text-3xl lg:text-4xl mt-4 font-semibold text-neutral-700 py-6 md:py-16 ">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl mt-4 font-semibold text-black dark:text-white py-6 md:py-16 ">
         See The Magic. Try Now
       </h1>
       <motion.button
