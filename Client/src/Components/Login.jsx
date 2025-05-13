@@ -1,4 +1,4 @@
-// Add these to your imports
+//imports
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../Context/AppContext";
 import { motion } from "framer-motion";

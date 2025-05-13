@@ -41,7 +41,7 @@ const GenrateButton = () => {
       >
         {" "}
         Generate Images
-        <img src=".\src\assets\generate.png" className="w-7"></img>
+        <img src={assets.generate} className="w-7"></img>
       </motion.button>
     </motion.div>
   );

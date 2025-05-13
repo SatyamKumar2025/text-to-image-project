@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { motion } from "motion/react";
 import { AppContext } from "../Context/AppContext";
 import { useNavigate } from "react-router-dom";
+import { assets } from "../assets/assets";
 
 function Header() {
   const { user, setShowLogin } = useContext(AppContext);
@@ -28,7 +29,7 @@ function Header() {
         transition={{ delay: 0.2, duration: 0.8 }}
       >
         <p>Best Text To Image Generator</p>
-        <img src=".\src\assets\star.png" alt="" className="w-7"></img>
+        <img src={assets.star} alt="" className="w-7"></img>
       </motion.div>
       <motion.h1
         className="text-8xl max-w-[800px] sm:text-9xl sm:max-w-[1100px] mx-auto mt-6"
@@ -60,7 +61,7 @@ function Header() {
         }}
       >
         Generate images
-        <img src=".\src\assets\generate.png" className="w-7"></img>
+        <img src={assets.generate} className="w-7"></img>
       </motion.button>
       <motion.div
         initial={{ opacity: 0 }}
@@ -70,27 +71,27 @@ function Header() {
       >
         <motion.img
           whileHover={{ scale: 1.05, duration: 0.1 }}
-          src=".\src\assets\3rd.jpg"
+          src={assets.third}
           className="w-40 h-40 object-cover"
         />
         <motion.img
           whileHover={{ scale: 1.05, duration: 0.1 }}
-          src=".\src\assets\2nd.jpg"
+          src={assets.second}
           className="w-40 h-40 object-cover"
         />
         <motion.img
           whileHover={{ scale: 1.05, duration: 0.1 }}
-          src=".\src\assets\1st.png"
+          src={assets.first}
           className="w-40 h-40 object-cover"
         />
         <motion.img
           whileHover={{ scale: 1.05, duration: 0.1 }}
-          src=".\src\assets\2nd.jpg"
+          src={assets.second}
           className="w-40 h-40 object-cover"
         />
         <motion.img
           whileHover={{ scale: 1.05, duration: 0.1 }}
-          src=".\src\assets\3rd.jpg"
+          src={assets.third}
           className="w-40 h-40 object-cover"
         />
       </motion.div>

@@ -15,8 +15,12 @@ import email_icon from './email_icon.png'
 import password_icon from './password_icon.png'
 import close_icon from './close_icon.png'
 import star from './star.png'
-
- 
+import credit_star from './credit_star.png'
+import generate from './generate.png'
+import first from './first.jpg'
+import second from './second.jpg'
+import third from './third.jpg'
+import user from './user.png'
  
 export const assets =
   {
@@ -32,6 +36,12 @@ export const assets =
     password_icon,
     close_icon,
     star,
+    credit_star,
+    generate,
+    first,
+    second,
+    third,
+    user,
   }
 
  export const StepData =[

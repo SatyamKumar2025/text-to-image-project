@@ -52,7 +52,11 @@ const NavBar = () => {
             </button>
 
             {dropdownOpen && (
-              <div className="absolute left-0 mt-2 w-56 bg-white text-black dark:text-white shadow-md rounded z-10">
+              <div
+                className="absolute left-0 mt-2 w-56 bg-white text-black dark:text-white shadow-md rounded z-10"
+                onMouseEnter={() => setDropdownOpen(true)}
+                onMouseLeave={() => setDropdownOpen(false)}
+              >
                 <Link
                   to="/result"
                   className="block px-4 py-2 hover:bg-gray-200"
@@ -63,9 +67,14 @@ const NavBar = () => {
                 <Link
                   to="/image-to-animation"
                   className="block px-4 py-2 hover:bg-gray-200"
-                  onClick={() => setDropdownOpen(false)}
                 >
-                  Image to Animation
+                  <div
+                    onClick={() =>
+                      alert("this feature is currently unavailable...")
+                    }
+                  >
+                    Image to Animation
+                  </div>
                 </Link>
               </div>
             )}
@@ -86,7 +95,7 @@ const NavBar = () => {
               className="flex items-center gap-2 bg-blue-100 px-4 sm:px-6 py-1.5 sm:py-3 rounded-full hover:scale-105 transition-all duration-700"
             >
               <img
-                src="./src/assets/credit-star.png"
+                src={assets.credit_star}
                 className="w-10 drop-shadow-sm"
                 alt="Credits"
               />
@@ -115,11 +124,7 @@ const NavBar = () => {
 
             {/* Profile Image */}
             <div className="relative group">
-              <img
-                className="w-10 drop-shadow"
-                src="./src/assets/user.png"
-                alt="User"
-              />
+              <img className="w-10 drop-shadow" src={assets.user} alt="User" />
               <div className="absolute hidden group-hover:block top-0 right-0 left-0.4 z-10 text-black rounded pt-12">
                 <ul className="list-none m-0 p-2 bg-white rounded-md border text-sm">
                   <li
