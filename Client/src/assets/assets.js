@@ -21,6 +21,7 @@ import first from './first.png'
 import second from './second.jpg'
 import third from './third.jpg'
 import user from './user.png'
+import scanner from './scanner.jpeg'
  
 export const assets =
   {
@@ -42,6 +43,7 @@ export const assets =
     second,
     third,
     user,
+    scanner,
   }
 
  export const StepData =[

@@ -88,26 +88,75 @@ const userCredit = async (req,res)=>
   }
 }
 
-import { Resend } from "resend";
+// import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
+// const verificationCodes = {};
+
+// const sendVerificationCode = async (req, res) => {
+//   try {
+//     const { email } = req.body;
+//     console.log(email)
+//     if (!email) return res.json({ success: false, message: "Email is required" });
+
+//     const code = Math.floor(100000 + Math.random() * 900000).toString();
+//     verificationCodes[email] = code;
+
+//     await resend.emails.send({
+//       from: "VerifyBot <onboarding@resend.dev>", // default sender for dev
+//       to: email,
+//       subject: "Your Verification Code",
+//       text: `Your verification code is: ${code}`,
+//     });
+
+//     res.json({ success: true, message: "Verification code sent!" });
+//   } catch (error) {
+//     console.error(error);
+//     res.json({ success: false, message: "Failed to send email" });
+//   }
+// };
+
+// const verifyCode = (req, res) => {
+//   const { email, code } = req.body;
+//   if (!email || !code) return res.json({ success: false, message: "Missing fields" });
+
+//   if (verificationCodes[email] === code) {
+//     delete verificationCodes[email];
+//     return res.json({ success: true, message: "Code verified" });
+//   } else {
+//     return res.json({ success: false, message: "Invalid code" });
+//   }
+// };
+ 
+import axios from 'axios';
+
+const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const verificationCodes = {};
 
 const sendVerificationCode = async (req, res) => {
   try {
     const { email } = req.body;
+    console.log(email);
+
     if (!email) return res.json({ success: false, message: "Email is required" });
 
     const code = Math.floor(100000 + Math.random() * 900000).toString();
     verificationCodes[email] = code;
 
-    await resend.emails.send({
-      from: "VerifyBot <onboarding@resend.dev>", // default sender for dev
-      to: email,
+    // Send the email using Brevo API
+    const response = await axios.post('https://api.brevo.com/v3/smtp/email', {
+      sender: { email: "satyam2021@gift.edu.in", name: "Satyam Kumar" },
+      to: [{ email: email }],
       subject: "Your Verification Code",
-      text: `Your verification code is: ${code}`,
+      textContent: `Your verification code is: ${code}`,
+    }, {
+      headers: {
+        'api-key': BREVO_API_KEY,
+        'Content-Type': 'application/json'
+      }
     });
 
+    console.log('Email sent:', response.data);
     res.json({ success: true, message: "Verification code sent!" });
   } catch (error) {
     console.error(error);
@@ -126,6 +175,7 @@ const verifyCode = (req, res) => {
     return res.json({ success: false, message: "Invalid code" });
   }
 };
+
  
 
 

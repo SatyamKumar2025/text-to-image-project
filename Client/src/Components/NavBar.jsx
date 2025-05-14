@@ -58,7 +58,7 @@ const NavBar = () => {
                 onMouseLeave={() => setDropdownOpen(false)}
               >
                 <Link
-                  to="/result"
+                  to="/"
                   className="block px-4 py-2 hover:bg-gray-200"
                   onClick={() => setDropdownOpen(false)}
                 >
@@ -69,9 +69,10 @@ const NavBar = () => {
                   className="block px-4 py-2 hover:bg-gray-200"
                 >
                   <div
-                    onClick={() =>
-                      alert("this feature is currently unavailable...")
-                    }
+                    onClick={(e) => {
+                      e.preventDefault();
+                      alert("this feature is currently unavailable...");
+                    }}
                   >
                     Image to Animation
                   </div>

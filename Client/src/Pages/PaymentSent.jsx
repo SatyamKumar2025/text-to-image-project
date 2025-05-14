@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { AppContext } from "../Context/AppContext";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { assets } from "../assets/assets";
 
 const PaymentCard = () => {
   const { user } = useContext(AppContext);
@@ -79,7 +80,7 @@ const PaymentCard = () => {
 
       <div className="w-full flex justify-center mb-6">
         <img
-          src="/src/assets/scanner.jpeg"
+          src={assets.scanner}
           alt="Scan to Pay"
           className="w-80 h-80 object-contain rounded shadow"
         />
